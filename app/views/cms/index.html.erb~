@@ -1,0 +1,8 @@
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
+
+<div class="entry">
+  <h3><%= @homepage.title %></h3>
+  a<%= sanitize(@homepage.content) %>
+</div>

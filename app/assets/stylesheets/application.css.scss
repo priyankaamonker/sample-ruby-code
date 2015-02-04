@@ -1,0 +1,58 @@
+#banner {
+  background: #e2e2e2;
+  padding: 10px;
+  border-bottom: 2px solid;
+  font: small-caps 40px/40px "Times New Roman", serif;
+  color: #000000;
+  text-align: center;
+ 
+  img {
+    float: left;
+  }
+}
+ 
+#notice {
+  color: #000 !important;
+  border: 2px solid red;
+  padding: 1em;
+  margin-bottom: 2em;
+  background-color: #f0f0f0;
+  font: bold smaller sans-serif;
+}
+ 
+#columns {
+  background: #3394F7;
+ 
+  #main {
+    margin-left: 17em;
+    padding: 1em;
+    background: white;
+  }
+ 
+  #side {
+    float: left;
+    padding: 1em 2em;
+    width: 13em;
+    background: #3394F7;
+ 
+    ul {
+      padding: 0;
+ 
+      li {
+        list-style: none;
+ 
+        a {
+          color: #bfb;
+          font-size: small;
+        }
+      }
+    }
+  }
+
+   /* An entry in the store catalog */
+  .entry {
+    overflow: auto;
+    margin-top: 1em;
+    min-height: 500px;
+  }
+}

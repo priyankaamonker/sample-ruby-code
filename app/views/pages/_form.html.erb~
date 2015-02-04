@@ -1,0 +1,34 @@
+<%= form_for(@page) do |f| %>
+  <% if @page.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@page.errors.count, "error") %> prohibited this page from being saved:</h2>
+
+      <ul>
+      <% @page.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :content %><br>
+    <%= f.text_area :content, rows: 10, cols: 30 %>
+  </div>
+  <div class="field">
+    <%= f.label :defaut %><br>
+    <%= f.check_box :defaut %>
+  </div>
+  <div class="field">
+    <%= f.label :location %><br>
+    <%= f.radio_button :location, 0 %><%= f.label :Top %>
+    <%= f.radio_button :location, 1 %><%= f.label :Side %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

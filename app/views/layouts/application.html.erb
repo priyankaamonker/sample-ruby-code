@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Project Cms</title>
+  <%= stylesheet_link_tag    "application", controller.controller_name, media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body class='<%= controller.controller_name %>'>
+  <div id="banner">
+    <%= link_to image_tag("logo.png"), cms_url %>
+    <%= @page_title || "Project Cms" %><!-- <label id="code.depot.e.title"/> -->
+  </div>
+  <div id="columns">
+    <div id="side">
+    <%= render "pages/page" %>
+
+    <br />
+    <b>Other links</b>
+
+    <% if !session[:user_id] %>
+      <ul>
+        <li><%= link_to 'Login', login_path %></li>
+      </ul>
+    <% end %>
+
+    <% if session[:user_id] %>
+      <ul>
+        <li><%= link_to 'Pages', pages_path %></li>
+        <li><%= link_to 'Users', users_path %></li>
+      <ul>
+      <br />
+      <%= button_to 'Logout', logout_path, method: :delete %>
+    <% end %>
+    </div>
+    <div id="main">
+      <%= yield %>
+    </div>
+  </div>
+</body>
+</html>
